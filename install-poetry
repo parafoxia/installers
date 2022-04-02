@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $1 ]; then
+    PYVER=$1
+else
+    PYVER="3"
+fi
+
+cd /tmp
+python$PYVER -m venv .venv
+source .venv/bin/activate
+curl -sSL https:/install.python-poetry.org | python -
+deactivate
+rm -rf .venv
+
+echo "All done!"

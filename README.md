@@ -12,9 +12,24 @@ If you have a `.profile` file, place it in this directory before installing.
 
 ### Usage
 
-```sh
+```bash
 sudo bash install-latex
 ```
+
+***
+
+## Poetry
+
+This script installs the latest version of Poetry for Python.
+
+### Usage
+
+```bash
+bash install-poetry [python-version]
+```
+
+Here, `python-version` is the version of Python you wish to use when installing.
+By default, "3" is used (calling `python3`).
 
 ***
 
@@ -25,7 +40,7 @@ It can install multiple Python versions at once.
 
 ### Usage
 
-```sh
+```bash
 bash install-python <version1> [version2 ...]
 ```
 
@@ -37,7 +52,7 @@ This script downloads, builds, and installs the latest version of Redis from sou
 
 ### Usage
 
-```sh
+```bash
 bash install-redis [-t]
 ```
 
