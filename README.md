@@ -3,16 +3,20 @@
 This is a repository for various install scripts.
 These scripts will only work on Debian-based systems.
 
+***
+
 ## LaTeX
 
 This script installs latest version of TeX Live and all packages.
-If you have a profile file, place it in this directory before installing.
+If you have a `.profile` file, place it in this directory before installing.
 
 ### Usage
 
 ```sh
 sudo bash install-latex
 ```
+
+***
 
 ## Python
 
@@ -25,6 +29,8 @@ It can install multiple Python versions at once.
 bash install-python <version1> [version2 ...]
 ```
 
+***
+
 ## Redis
 
 This script downloads, builds, and installs the latest version of Redis from source.
@@ -35,7 +41,9 @@ This script downloads, builds, and installs the latest version of Redis from sou
 bash install-redis [-t]
 ```
 
-The `-t` flag denotes whether `make test` is run or not. By default, they are not run.
+The `-t` flag denotes whether `make test` is run or not. By default, it is not run.
+
+***
 
 ## License
 
