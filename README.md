@@ -41,8 +41,10 @@ It can install multiple Python versions at once.
 ### Usage
 
 ```bash
-bash install-python <version1> [version2 ...]
+bash install-python <version> [version ...]
 ```
+
+Every `version` is a version of Python you wish to install, for example, 3.10.4 or 3.11.0a6.
 
 ***
 
