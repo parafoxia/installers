@@ -5,7 +5,7 @@ These scripts will only work on Debian-based systems.
 
 ## LaTeX
 
-This script installs TeX Live and all packages.
+This script installs latest version of TeX Live and all packages.
 If you have a profile file, place it in this directory before installing.
 
 ### Usage
@@ -24,6 +24,18 @@ It can install multiple Python versions at once.
 ```sh
 bash install-python <version1> [version2 ...]
 ```
+
+## Redis
+
+This script downloads, builds, and installs the latest version of Redis from source.
+
+### Usage
+
+```sh
+bash install-redis [-t]
+```
+
+The `-t` flag denotes whether `make test` is run or not. By default, they are not run.
 
 ## License
 

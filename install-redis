@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Argument processing
+
+TEST="false"
+
+while getopts ":t" "OPTKEY"; do
+    case ${OPTKEY} in
+        "t")
+            TEST="true"
+            ;;
+        "?")
+            echo "INVALID OPTION -- ${OPTARG}" >&2
+            exit 1
+            ;;
+    esac
+done
+
+# Operations
+
+echo "Configuring packages..."
+sudo apt-get update -qq && sudo apt-get upgrade -qq
+sudo apt-get install -qq gcc make
+
+echo "Downloading Redis..."
+cd /tmp
+wget -q https://download.redis.io/redis-stable.tar.gz
+tar -xf redis-stable.tar.gz
+
+echo "Building Redis..."
+cd redis-stable
+make -s -j $(nproc)
+
+echo "Installing Redis..."
+sudo make -s install
+
+if ${TEST}; then
+    echo "Running tests..."
+    sudo apt-get install -qq tcl
+    make test
+fi
+
+echo "All done!"
